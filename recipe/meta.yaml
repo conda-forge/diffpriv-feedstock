@@ -1,5 +1,5 @@
 {% set name = "DiffPriv" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/DiffPriv-{{ version }}.tar.gz
-  sha256: 135f104e825accc32e33d4d8e79777024896e038f202336b1b51fe7bb1aa21b9
+  sha256: 36e478770a4107b4aecec77e5548115213c33c731f556475307aeef784ad205a
 
 build:
   number: 0
