@@ -8,8 +8,8 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/DiffPriv-{{ version }}.tar.gz
-  sha256: 538a91e6792550e47997d5ac1005c40721ac2b0bcecbfca2cd0e92ffa4e010a6
-
+  sha256: ae0f9933a7748b331524fa86704c634c456004b5380203266baae0a5c32551e0
+  
 build:
   number: 0
   noarch: python
