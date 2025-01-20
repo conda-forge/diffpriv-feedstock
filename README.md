@@ -1,11 +1,11 @@
-About diffpriv
-==============
+About diffpriv-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/diffpriv-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/Quantalabs/DiffPriv
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/diffpriv-feedstock/blob/master/LICENSE.txt)
 
 Summary: A Differential Privacy Package
 
@@ -17,8 +17,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12773&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/diffpriv-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12773&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/diffpriv-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -34,23 +34,48 @@ Current release info
 Installing diffpriv
 ===================
 
-Installing `diffpriv` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `diffpriv` from the `conda-forge/label/diffpriv_dev` channel can be achieved by adding `conda-forge/label/diffpriv_dev` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/diffpriv_dev
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `diffpriv` can be installed with:
+Once the `conda-forge/label/diffpriv_dev` channel has been enabled, `diffpriv` can be installed with `conda`:
 
 ```
 conda install diffpriv
 ```
 
-It is possible to list all of the versions of `diffpriv` available on your platform with:
+or with `mamba`:
 
 ```
-conda search diffpriv --channel conda-forge
+mamba install diffpriv
+```
+
+It is possible to list all of the versions of `diffpriv` available on your platform with `conda`:
+
+```
+conda search diffpriv --channel conda-forge/label/diffpriv_dev
+```
+
+or with `mamba`:
+
+```
+mamba search diffpriv --channel conda-forge/label/diffpriv_dev
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search diffpriv --channel conda-forge/label/diffpriv_dev
+
+# List packages depending on `diffpriv`:
+mamba repoquery whoneeds diffpriv --channel conda-forge/label/diffpriv_dev
+
+# List dependencies of `diffpriv`:
+mamba repoquery depends diffpriv --channel conda-forge/label/diffpriv_dev
 ```
 
 
@@ -68,10 +93,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
